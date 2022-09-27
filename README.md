@@ -3,6 +3,7 @@
 ## Installation
 
 1. npm install
+2. npm run api-generate
 
 ## Start
 
