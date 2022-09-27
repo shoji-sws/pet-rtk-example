@@ -39,7 +39,7 @@ function App() {
         />
         &nbsp;
         <button type="submit">add</button>
-        <div>{JSON.stringify(result, null, 2)}</div>
+        <pre>{JSON.stringify(result, null, 2)}</pre>
       </form>
 
       <br />
@@ -49,7 +49,7 @@ function App() {
         {fetchResult.isFetching ? (
           <div>fetching</div>
         ) : (
-          JSON.stringify(fetchResult?.data, null, 2)
+          <pre>{JSON.stringify(fetchResult?.data, null, 2)}</pre>
         )}
       </div>
     </div>
