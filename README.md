@@ -20,5 +20,5 @@
   - https://redux-toolkit.js.org/rtk-query/overview
 - rtk query code generation
   - https://redux-toolkit.js.org/rtk-query/usage/code-generation
-- rtk-query openapi article
+- rtk query openapi article
   - https://zenn.dev/kahirokunn/articles/89ce38fdbf924a
