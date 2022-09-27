@@ -7,27 +7,44 @@ function App() {
     status: "available",
   });
 
-  const [addPet] = petApi.endpoints.addPet.useMutation();
+  const [addPet, result] = petApi.endpoints.addPet.useMutation();
   const [name, setName] = useState("");
 
-  const save = () => {
-    addPet({
+  const save = async () => {
+    await addPet({
       pet: {
         name,
         photoUrls: [""],
         status: "available",
       },
-    });
+    }).unwrap();
+
+    window.alert("save!!");
   };
 
   return (
     <div className="App">
-      <input
-        type="text"
-        onChange={(e) => setName(e.target.value)}
-        value={name}
-      />
-      <button onClick={save}>add</button>
+      <h1>form</h1>
+
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          save();
+        }}
+      >
+        <input
+          type="text"
+          onChange={(e) => setName(e.target.value)}
+          value={name}
+        />
+        &nbsp;
+        <button type="submit">add</button>
+        <div>{JSON.stringify(result, null, 2)}</div>
+      </form>
+
+      <br />
+
+      <h1>data</h1>
       <div>
         {fetchResult.isFetching ? (
           <div>fetching</div>
